@@ -20,7 +20,7 @@
         }
 
         .hero {
-            background: linear-gradient(135deg, rgba(30, 60, 114, 0.9) 0%, rgba(42, 82, 152, 0.9) 50%, rgba(79, 172, 254, 0.9) 100%);
+            background: linear-gradient(135deg, rgba(30, 60, 114, 0.8) 0%, rgba(42, 82, 152, 0.8) 50%, rgba(79, 172, 254, 0.8) 100%), url('https://github.com/yunn4humanity/simul.ai/blob/main/title.png');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -30,11 +30,6 @@
             align-items: center;
             position: relative;
             overflow: hidden;
-        }
-
-        /* Background image placeholder - replace YOUR_IMAGE_URL with actual image */
-        .hero.with-image {
-            background-image: linear-gradient(135deg, rgba(30, 60, 114, 0.8) 0%, rgba(42, 82, 152, 0.8) 50%, rgba(79, 172, 254, 0.8) 100%), url('https://github.com/yunn4humanity/simul.ai/blob/main/title.png?raw=true');
         }
 
         .hero::before {
@@ -83,12 +78,14 @@
             margin-right: 1.5rem;
             position: relative;
             box-shadow: 0 8px 25px rgba(74, 222, 128, 0.4);
+            background-image: url('https://github.com/yunn4humanity/simul.ai/blob/main/icon.png');
+            background-size: 40px 40px;
+            background-repeat: no-repeat;
+            background-position: center;
         }
 
         .logo-icon svg {
-            width: 40px;
-            height: 40px;
-            fill: white;
+            display: none;
         }
 
         .logo h1 {
@@ -195,6 +192,25 @@
             max-width: 80%;
         }
 
+        .blueprint-gallery {
+            margin-top: 3rem;
+        }
+
+        .blueprint-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .blueprint-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
         .value-props {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -215,29 +231,6 @@
             font-weight: bold;
             color: #4ade80;
             margin-bottom: 1rem;
-        }
-
-        .market-section {
-            background: white;
-            padding: 5rem 0;
-        }
-
-        .market-stats {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            text-align: center;
-        }
-
-        .stat-card {
-            padding: 2rem;
-        }
-
-        .stat-number {
-            font-size: 3rem;
-            font-weight: bold;
-            color: #2563eb;
-            margin-bottom: 0.5rem;
         }
 
         .achievements-section {
@@ -309,94 +302,28 @@
             margin-top: 1rem;
             display: inline-block;
         }
-            background: #f1f5f9;
+
+        .market-section {
+            background: white;
             padding: 5rem 0;
         }
 
-        .team-container {
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .team-row {
-            display: flex;
+        .market-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        .team-row .team-card {
-            flex: 1;
-            width: 50%;
-        }
-
-        /* Logo icon - easily replaceable */
-        .logo-icon {
-            width: 70px;
-            height: 70px;
-            background: #4ade80;
-            border-radius: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 1.5rem;
-            position: relative;
-            box-shadow: 0 8px 25px rgba(74, 222, 128, 0.4);
-            /* REPLACE 'YOUR_ICON_URL_HERE' with your actual icon URL */
-            background-image: url('https://github.com/yunn4humanity/simul.ai/blob/main/icon.png?raw=true');
-            background-size: 40px 40px;
-            background-repeat: no-repeat;
-            background-position: center;
-        }
-
-        /* Hide SVG when you add custom icon */
-        .logo-icon.with-custom-icon svg {
-            display: none;
-        }
-
-        .logo-icon svg {
-            width: 40px;
-            height: 40px;
-            fill: white;
-        }
-
-        .team-card {
-            background: white;
-            border-radius: 15px;
-            padding: 2rem;
             text-align: center;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
 
-        .team-card h3 {
-            margin: 1rem 0 0.5rem 0;
-            font-size: 1.3rem;
-            color: #1e293b;
+        .stat-card {
+            padding: 2rem;
         }
 
-        .team-card p {
-            margin: 0.5rem 0;
-            font-size: 0.9rem;
-            line-height: 1.4;
-        }
-
-        .team-card p:first-of-type {
-            font-weight: 600;
-            color: #4ade80;
-            font-size: 1rem;
-        }
-
-        .team-avatar {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(45deg, #4ade80, #22d3ee);
-            border-radius: 50%;
-            margin: 0 auto 1rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 2rem;
+        .stat-number {
+            font-size: 3rem;
             font-weight: bold;
+            color: #2563eb;
+            margin-bottom: 0.5rem;
         }
 
         .contact-section {
@@ -411,47 +338,16 @@
             margin-top: 2rem;
         }
 
-        .blueprint-gallery {
-            margin-top: 3rem;
-        }
-
-        .blueprint-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-
-        .blueprint-placeholder {
-            <img src="https://github.com/yunn4humanity/simul.ai/blob/main/blueprint1.png?raw=true" class="blueprint-image" alt="Process Design 1">
-            <img src="https://github.com/yunn4humanity/simul.ai/blob/main/blueprint2.png?raw=true" class="blueprint-image" alt="Process Design 2">
-            <img src="https://github.com/yunn4humanity/simul.ai/blob/main/blueprint3.png?raw=true" class="blueprint-image" alt="Process Design 3">
-            <img src="https://github.com/yunn4humanity/simul.ai/blob/main/blueprint4.png?raw=true" class="blueprint-image" alt="Process Design 4">
+        @media (max-width: 768px) {
+            .achievements-grid {
+                flex-direction: column;
+                align-items: center;
             }
-
-        .blueprint-placeholder:hover {
-            background: rgba(255,255,255,0.15);
-            border-color: rgba(255,255,255,0.5);
-        }
-
-        .blueprint-placeholder p {
-            margin: 0 0 0.5rem 0;
-            font-weight: 600;
-        }
-
-        .blueprint-placeholder small {
-            opacity: 0.7;
-            font-size: 0.8rem;
-        }
-
-        /* Style for when you add actual images */
-        .blueprint-image {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-        }
+            
+            .achievement-card {
+                max-width: 400px;
+            }
+            
             .logo h1 {
                 font-size: 3rem;
             }
@@ -476,7 +372,19 @@
         <div class="container">
             <div class="hero-content">
                 <div class="logo">
-                    <div class="logo-icon"></div>
+                    <div class="logo-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="5" cy="5" r="2" fill="currentColor"/>
+                            <circle cx="19" cy="5" r="2" fill="currentColor"/>
+                            <circle cx="5" cy="19" r="2" fill="currentColor"/>
+                            <circle cx="19" cy="19" r="2" fill="currentColor"/>
+                            <circle cx="12" cy="12" r="2.5" fill="currentColor"/>
+                            <line x1="7" y1="5" x2="10" y2="10" stroke="currentColor" stroke-width="1.5"/>
+                            <line x1="17" y1="5" x2="14" y2="10" stroke="currentColor" stroke-width="1.5"/>
+                            <line x1="7" y1="19" x2="10" y2="14" stroke="currentColor" stroke-width="1.5"/>
+                            <line x1="17" y1="19" x2="14" y2="14" stroke="currentColor" stroke-width="1.5"/>
+                        </svg>
+                    </div>
                     <h1>Simul.ai</h1>
                 </div>
                 <p class="tagline">Manufacturing-specific generative AI-based automation tool to solve long-running design process challenges for manufacturing EPC firms</p>
@@ -536,22 +444,10 @@
                 <div class="blueprint-gallery">
                     <h4 style="text-align: center; margin: 2rem 0 1rem;">AI-Generated Process Design Blueprints</h4>
                     <div class="blueprint-grid">
-                        <div class="blueprint-placeholder">
-                            <p>Blueprint Image 1</p>
-                            <small>Replace with your process design image</small>
-                        </div>
-                        <div class="blueprint-placeholder">
-                            <p>Blueprint Image 2</p>
-                            <small>Replace with your process design image</small>
-                        </div>
-                        <div class="blueprint-placeholder">
-                            <p>Blueprint Image 3</p>
-                            <small>Replace with your process design image</small>
-                        </div>
-                        <div class="blueprint-placeholder">
-                            <p>Blueprint Image 4</p>
-                            <small>Replace with your process design image</small>
-                        </div>
+                        <img src="https://github.com/yunn4humanity/simul.ai/blob/main/blueprint1.png" class="blueprint-image" alt="Process Design 1">
+                        <img src="https://github.com/yunn4humanity/simul.ai/blob/main/blueprint2.png" class="blueprint-image" alt="Process Design 2">
+                        <img src="https://github.com/yunn4humanity/simul.ai/blob/main/blueprint3.png" class="blueprint-image" alt="Process Design 3">
+                        <img src="https://github.com/yunn4humanity/simul.ai/blob/main/blueprint4.png" class="blueprint-image" alt="Process Design 4">
                     </div>
                 </div>
             </div>
@@ -701,7 +597,7 @@
             }, observerOptions);
 
             // Apply animation to cards and sections
-            const animatedElements = document.querySelectorAll('.problem-card, .value-card, .team-card, .stat-card');
+            const animatedElements = document.querySelectorAll('.problem-card, .value-card, .stat-card');
             animatedElements.forEach(el => {
                 el.style.opacity = '0';
                 el.style.transform = 'translateY(30px)';
