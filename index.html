@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simul.ai - AI-Powered Chemical Plant Design Revolution</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #4facfe 100%);
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><circle cx="200" cy="200" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="600" cy="300" r="1.5" fill="rgba(255,255,255,0.08)"/><circle cx="800" cy="100" r="1" fill="rgba(255,255,255,0.06)"/><circle cx="300" cy="600" r="2.5" fill="rgba(255,255,255,0.05)"/><circle cx="900" cy="700" r="1.5" fill="rgba(255,255,255,0.07)"/></svg>') repeat;
+            animation: float 20s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-content {
+            text-align: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+
+        .logo-icon {
+            width: 60px;
+            height: 60px;
+            background: #4ade80;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+            position: relative;
+        }
+
+        .logo-icon::before {
+            content: '';
+            width: 20px;
+            height: 20px;
+            background: white;
+            border-radius: 50%;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+
+        .logo-icon::after {
+            content: '';
+            width: 15px;
+            height: 15px;
+            background: white;
+            border-radius: 50%;
+            position: absolute;
+            bottom: 8px;
+            right: 8px;
+        }
+
+        .logo h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .tagline {
+            font-size: 1.5rem;
+            margin-bottom: 3rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .vision-statement {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            background: linear-gradient(45deg, #4ade80, #22d3ee);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .problem-section {
+            background: #f8fafc;
+            padding: 5rem 0;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #1e293b;
+        }
+
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .problem-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .problem-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .problem-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .solution-section {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: white;
+            padding: 5rem 0;
+        }
+
+        .solution-demo {
+            background: rgba(255,255,255,0.05);
+            border-radius: 20px;
+            padding: 3rem;
+            margin: 3rem 0;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .chat-interface {
+            background: #1e293b;
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .chat-message {
+            background: #4ade80;
+            color: white;
+            padding: 1rem 1.5rem;
+            border-radius: 20px;
+            margin-bottom: 1rem;
+            max-width: 80%;
+        }
+
+        .chat-response {
+            background: #374151;
+            color: white;
+            padding: 1rem 1.5rem;
+            border-radius: 20px;
+            margin-left: auto;
+            max-width: 80%;
+        }
+
+        .value-props {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .value-card {
+            background: rgba(255,255,255,0.05);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .value-number {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #4ade80;
+            margin-bottom: 1rem;
+        }
+
+        .market-section {
+            background: white;
+            padding: 5rem 0;
+        }
+
+        .market-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .stat-card {
+            padding: 2rem;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #2563eb;
+            margin-bottom: 0.5rem;
+        }
+
+        .team-section {
+            background: #f1f5f9;
+            padding: 5rem 0;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .team-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .team-avatar {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(45deg, #4ade80, #22d3ee);
+            border-radius: 50%;
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        .contact-section {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .contact-info {
+            font-size: 1.2rem;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .logo h1 {
+                font-size: 2rem;
+            }
+            
+            .tagline {
+                font-size: 1.2rem;
+            }
+            
+            .vision-statement {
+                font-size: 1.5rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="logo">
+                    <div class="logo-icon"></div>
+                    <h1>Simul.ai</h1>
+                </div>
+                <p class="tagline">Manufacturing-specific generative AI-based automation tool to solve long-running design process challenges for manufacturing EPC firms</p>
+                <div class="vision-statement">
+                    Because the planet can't wait for slow decarbonization,<br>
+                    we're unleashing AI to revolutionize how fast we can transform industry
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="problem-section">
+        <div class="container">
+            <h2 class="section-title">The Critical Problem</h2>
+            <div class="problem-grid">
+                <div class="problem-card">
+                    <div class="problem-icon">⚠️</div>
+                    <h3>Design Errors Cost Millions</h3>
+                    <p>EPC firms face massive costs and delays due to design errors. The Middle East has the world's worst project delays.</p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">🔄</div>
+                    <h3>Endless Feedback Loops</h3>
+                    <p>Junior engineers need constant senior feedback, creating N-times revision cycles that waste 6% of down payments.</p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">⏰</div>
+                    <h3>Insufficient Design Time</h3>
+                    <p>Cutthroat competition results in 1-year contracts when 2+ years are needed for proper design.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section class="solution-section">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">AI-Powered Solution</h2>
+            
+            <div class="solution-demo">
+                <h3>Experience Simul.ai in Action</h3>
+                <div class="chat-interface">
+                    <div class="chat-message">
+                        CO2 to methanol 공정에서 packed bed reactor를 활용한 경우의 최적 조건을 찾고 싶어. 설계도를 추천해줘.
+                    </div>
+                    <div class="chat-response">
+                        과거 자사에서 건설한 메탄올 제조 공정 및 5개의 사례를 분석 후 최적의 설계도를 고찰하여, 다음의 설계도를 추천드립니다.<br>
+                        <em>내부 자료 검색 중...</em>
+                    </div>
+                </div>
+            </div>
+
+            <div class="value-props">
+                <div class="value-card">
+                    <div class="value-number">1-2x</div>
+                    <h3>Reduced Feedback Loops</h3>
+                    <p>From N times to just 1-2 iterations with senior knowledge-reflected blueprints</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-number">75%</div>
+                    <h3>Cost Reduction</h3>
+                    <p>Reduced labor costs, rework costs, and improved competitiveness</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-number">10%</div>
+                    <h3>ROI Improvement</h3>
+                    <p>Better ROI compared to existing process design software subscriptions</p>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 3rem;">
+                <h3>Key Features</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin-top: 2rem;">
+                    <div>
+                        <h4>🧠 Knowledge Hybrid</h4>
+                        <p>Combines AI with senior engineer expertise</p>
+                    </div>
+                    <div>
+                        <h4>🔍 Explainable AI</h4>
+                        <p>Transparent decision-making process</p>
+                    </div>
+                    <div>
+                        <h4>🔒 On-premise Security</h4>
+                        <p>High data security for internal use only</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Market Section -->
+    <section class="market-section">
+        <div class="container">
+            <h2 class="section-title">Massive Market Opportunity</h2>
+            <div class="market-stats">
+                <div class="stat-card">
+                    <div class="stat-number">$200B</div>
+                    <p>Global Manufacturing Design Market (TAM)</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">$1.8B</div>
+                    <p>Asia EPC Firms Process Simulation Market (SAM)</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">$9M</div>
+                    <p>Korea EPC Firms Market (SOM)</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">20%</div>
+                    <p>Annual Growth Rate (CAGR)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team-section">
+        <div class="container">
+            <h2 class="section-title">World-Class Team</h2>
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="team-avatar">SK</div>
+                    <h3>Sangyun Kim</h3>
+                    <p><strong>CEO</strong></p>
+                    <p>POSTECH CS&E, ML Lab Research, Presidential Science Scholarship</p>
+                </div>
+                <div class="team-card">
+                    <div class="team-avatar">KK</div>
+                    <h3>Kihyeon Kwon</h3>
+                    <p><strong>CTO</strong></p>
+                    <p>POSTECH Process Systems Lab PhD, SCI papers, 10+ tech startup prizes</p>
+                </div>
+                <div class="team-card">
+                    <div class="team-avatar">HH</div>
+                    <h3>Heewon Hwang</h3>
+                    <p><strong>Advisor</strong></p>
+                    <p>Former AspenTech Director, Hyundai Heavy Industries Manager</p>
+                </div>
+                <div class="team-card">
+                    <div class="team-avatar">DS</div>
+                    <h3>Donggi Song</h3>
+                    <p><strong>COO</strong></p>
+                    <p>POSTECH Math & ME, Factory Intelligence Lab, SCI paper co-author</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <h2>Ready to Transform Your Design Process?</h2>
+            <p>Join the revolution in chemical plant design with AI-powered optimization</p>
+            <div class="contact-info">
+                <p><strong>Sangyun Kim, CEO</strong></p>
+                <p>📞 010-8968-2089</p>
+                <p>✉️ toomstar@postech.ac.kr</p>
+                <p style="margin-top: 2rem; opacity: 0.8;">🏆 Already recognized: Silicon Valley WIN 3rd Prize | 💰 $350K funding secured</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Add smooth scrolling and animations
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animate elements on scroll
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            // Apply animation to cards and sections
+            const animatedElements = document.querySelectorAll('.problem-card, .value-card, .team-card, .stat-card');
+            animatedElements.forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+</html>
