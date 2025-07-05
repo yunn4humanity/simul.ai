@@ -20,13 +20,21 @@
         }
 
         .hero {
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #4facfe 100%);
+            background: linear-gradient(135deg, rgba(30, 60, 114, 0.9) 0%, rgba(42, 82, 152, 0.9) 50%, rgba(79, 172, 254, 0.9) 100%);
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
             color: white;
             min-height: 100vh;
             display: flex;
             align-items: center;
             position: relative;
             overflow: hidden;
+        }
+
+        /* Background image placeholder - replace YOUR_IMAGE_URL with actual image */
+        .hero.with-image {
+            background-image: linear-gradient(135deg, rgba(30, 60, 114, 0.8) 0%, rgba(42, 82, 152, 0.8) 50%, rgba(79, 172, 254, 0.8) 100%), url('YOUR_IMAGE_URL');
         }
 
         .hero::before {
@@ -65,41 +73,26 @@
         }
 
         .logo-icon {
-            width: 60px;
-            height: 60px;
+            width: 70px;
+            height: 70px;
             background: #4ade80;
-            border-radius: 50%;
+            border-radius: 16px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-right: 1rem;
+            margin-right: 1.5rem;
             position: relative;
+            box-shadow: 0 8px 25px rgba(74, 222, 128, 0.4);
         }
 
-        .logo-icon::before {
-            content: '';
-            width: 20px;
-            height: 20px;
-            background: white;
-            border-radius: 50%;
-            position: absolute;
-            top: 10px;
-            left: 10px;
-        }
-
-        .logo-icon::after {
-            content: '';
-            width: 15px;
-            height: 15px;
-            background: white;
-            border-radius: 50%;
-            position: absolute;
-            bottom: 8px;
-            right: 8px;
+        .logo-icon svg {
+            width: 40px;
+            height: 40px;
+            fill: white;
         }
 
         .logo h1 {
-            font-size: 3rem;
+            font-size: 4rem;
             font-weight: 800;
             letter-spacing: 1px;
             font-family: 'Inter', sans-serif;
@@ -247,15 +240,118 @@
             margin-bottom: 0.5rem;
         }
 
-        .team-section {
+        .achievements-section {
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #a855f7 100%);
+            color: white;
+            padding: 5rem 0;
+        }
+
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .achievement-card {
+            background: rgba(255,255,255,0.1);
+            padding: 3rem 2rem;
+            border-radius: 20px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .achievement-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+
+        .achievement-icon {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .achievement-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #fbbf24;
+        }
+
+        .achievement-amount {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #4ade80;
+            margin-bottom: 1rem;
+        }
+
+        .achievement-description {
+            font-size: 1rem;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        .program-badge {
+            background: rgba(74, 222, 128, 0.2);
+            border: 2px solid #4ade80;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-top: 1rem;
+            display: inline-block;
+        }
             background: #f1f5f9;
             padding: 5rem 0;
         }
 
-        .team-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        .team-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .team-row {
+            display: flex;
             gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .team-row .team-card {
+            flex: 1;
+            width: 50%;
+        }
+
+        /* Logo icon - easily replaceable */
+        .logo-icon {
+            width: 70px;
+            height: 70px;
+            background: #4ade80;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1.5rem;
+            position: relative;
+            box-shadow: 0 8px 25px rgba(74, 222, 128, 0.4);
+            /* REPLACE 'YOUR_ICON_URL_HERE' with your actual icon URL */
+            background-image: url('YOUR_ICON_URL_HERE');
+            background-size: 40px 40px;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        /* Hide SVG when you add custom icon */
+        .logo-icon.with-custom-icon svg {
+            display: none;
+        }
+
+        .logo-icon svg {
+            width: 40px;
+            height: 40px;
+            fill: white;
         }
 
         .team-card {
@@ -264,6 +360,24 @@
             padding: 2rem;
             text-align: center;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .team-card h3 {
+            margin: 1rem 0 0.5rem 0;
+            font-size: 1.3rem;
+            color: #1e293b;
+        }
+
+        .team-card p {
+            margin: 0.5rem 0;
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
+        .team-card p:first-of-type {
+            font-weight: 600;
+            color: #4ade80;
+            font-size: 1rem;
         }
 
         .team-avatar {
@@ -292,9 +406,56 @@
             margin-top: 2rem;
         }
 
-        @media (max-width: 768px) {
+        .blueprint-gallery {
+            margin-top: 3rem;
+        }
+
+        .blueprint-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .blueprint-placeholder {
+            background: rgba(255,255,255,0.1);
+            border: 2px dashed rgba(255,255,255,0.3);
+            border-radius: 10px;
+            padding: 2rem 1rem;
+            text-align: center;
+            min-height: 120px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .blueprint-placeholder:hover {
+            background: rgba(255,255,255,0.15);
+            border-color: rgba(255,255,255,0.5);
+        }
+
+        .blueprint-placeholder p {
+            margin: 0 0 0.5rem 0;
+            font-weight: 600;
+        }
+
+        .blueprint-placeholder small {
+            opacity: 0.7;
+            font-size: 0.8rem;
+        }
+
+        /* Style for when you add actual images */
+        .blueprint-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
             .logo h1 {
-                font-size: 2rem;
+                font-size: 3rem;
             }
             
             .tagline {
@@ -325,6 +486,9 @@
                     Because the planet can't wait for slow decarbonization,<br>
                     we're unleashing AI to revolutionize how fast we can transform industry
                 </div>
+                <p style="font-size: 1rem; opacity: 0.8; margin-bottom: 2rem; font-style: italic;">
+                    *EPC: Engineering, Procurement & Construction companies that deliver complete industrial projects from design to handover
+                </p>
             </div>
         </div>
     </section>
@@ -362,11 +526,34 @@
                 <h3>Experience Simul.ai in Action</h3>
                 <div class="chat-interface">
                     <div class="chat-message">
-                        CO2 to methanol 공정에서 packed bed reactor를 활용한 경우의 최적 조건을 찾고 싶어. 설계도를 추천해줘.
+                        I want to find the optimal conditions for utilizing a packed bed reactor in a CO2 to methanol process. Please recommend a blueprint design.
                     </div>
                     <div class="chat-response">
-                        과거 자사에서 건설한 메탄올 제조 공정 및 5개의 사례를 분석 후 최적의 설계도를 고찰하여, 다음의 설계도를 추천드립니다.<br>
-                        <em>내부 자료 검색 중...</em>
+                        After analyzing your company's past methanol production processes and 5 similar cases, I recommend the following optimal design blueprint.<br>
+                        <em>Searching internal data...</em>
+                    </div>
+                </div>
+                
+                <!-- Blueprint Images Section -->
+                <div class="blueprint-gallery">
+                    <h4 style="text-align: center; margin: 2rem 0 1rem;">AI-Generated Process Design Blueprints</h4>
+                    <div class="blueprint-grid">
+                        <div class="blueprint-placeholder">
+                            <p>Blueprint Image 1</p>
+                            <small>Replace with your process design image</small>
+                        </div>
+                        <div class="blueprint-placeholder">
+                            <p>Blueprint Image 2</p>
+                            <small>Replace with your process design image</small>
+                        </div>
+                        <div class="blueprint-placeholder">
+                            <p>Blueprint Image 3</p>
+                            <small>Replace with your process design image</small>
+                        </div>
+                        <div class="blueprint-placeholder">
+                            <p>Blueprint Image 4</p>
+                            <small>Replace with your process design image</small>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -409,6 +596,55 @@
         </div>
     </section>
 
+    <!-- Achievements & Funding Section -->
+    <section class="achievements-section">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">Achievements & Recognition</h2>
+            <div class="achievements-grid">
+                <div class="achievement-card">
+                    <div class="achievement-icon">🏆</div>
+                    <div class="achievement-title">Competition Success</div>
+                    <div class="achievement-description">
+                        <strong>Silicon Valley WIN Business Plan Competition - 3rd Prize</strong><br>
+                        Recognized among top startups in Silicon Valley's prestigious competition
+                        <div class="program-badge">Global Recognition</div>
+                    </div>
+                </div>
+                
+                <div class="achievement-card">
+                    <div class="achievement-icon">💰</div>
+                    <div class="achievement-title">Funding Secured</div>
+                    <div class="achievement-amount">$350K</div>
+                    <div class="achievement-description">
+                        Successfully raised seed funding from Korean investors, demonstrating strong market validation and investor confidence in our technology
+                        <div class="program-badge">Korean Investment</div>
+                    </div>
+                </div>
+                
+                <div class="achievement-card">
+                    <div class="achievement-icon">🚀</div>
+                    <div class="achievement-title">Government Support</div>
+                    <div class="achievement-description">
+                        <strong>Korea I-Corps Program Participant</strong><br>
+                        Selected for Korea's premier entrepreneurship acceleration program, receiving government backing and mentorship for technology commercialization
+                        <div class="program-badge">I-Corps Active</div>
+                    </div>
+                </div>
+                
+                <div class="achievement-card">
+                    <div class="achievement-icon">🎯</div>
+                    <div class="achievement-title">Multiple Awards</div>
+                    <div class="achievement-description">
+                        <strong>Gwacheon-si Startup Competition - 3rd Prize</strong> (3 out of 240 teams)<br>
+                        <strong>Asan Doers Program</strong> (80 out of 800 applicants)<br>
+                        Consistent recognition across multiple startup competitions
+                        <div class="program-badge">Proven Track Record</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Market Section -->
     <section class="market-section">
         <div class="container">
@@ -438,30 +674,50 @@
     <section class="team-section">
         <div class="container">
             <h2 class="section-title">World-Class Team</h2>
-            <div class="team-grid">
-                <div class="team-card">
-                    <div class="team-avatar">SK</div>
-                    <h3>Sangyun Kim</h3>
-                    <p><strong>CEO</strong></p>
-                    <p>POSTECH CS&E, ML Lab Research, Presidential Science Scholarship</p>
+            <div class="team-container">
+                <div class="team-row">
+                    <div class="team-card">
+                        <div class="team-avatar">SK</div>
+                        <h3>Sangyun Kim</h3>
+                        <p><strong>CEO</strong></p>
+                        <p>POSTECH Computer Science & Engineering</p>
+                        <p>• ML Lab Physics-based Forecasting AI Research</p>
+                        <p>• Revenue Experience with Solo Game Development</p>
+                        <p>• Presidential Science Scholarship Recipient</p>
+                        <p>• Global Client Communication (Belgium, Chile, S. Africa)</p>
+                    </div>
+                    <div class="team-card">
+                        <div class="team-avatar">KK</div>
+                        <h3>Kihyeon Kwon</h3>
+                        <p><strong>CTO</strong></p>
+                        <p>POSTECH Process Systems Lab Integrated M.S & PhD</p>
+                        <p>• Published SCI-quality papers including NSC paper</p>
+                        <p>• 2+ Corporate Process Simulation Assignments</p>
+                        <p>• 10+ Prizes in Nationwide Tech-startup Competitions</p>
+                        <p>• Deep Expertise in Chemical Process Design</p>
+                    </div>
                 </div>
-                <div class="team-card">
-                    <div class="team-avatar">KK</div>
-                    <h3>Kihyeon Kwon</h3>
-                    <p><strong>CTO</strong></p>
-                    <p>POSTECH Process Systems Lab PhD, SCI papers, 10+ tech startup prizes</p>
-                </div>
-                <div class="team-card">
-                    <div class="team-avatar">HH</div>
-                    <h3>Heewon Hwang</h3>
-                    <p><strong>Advisor</strong></p>
-                    <p>Former AspenTech Director, Hyundai Heavy Industries Manager</p>
-                </div>
-                <div class="team-card">
-                    <div class="team-avatar">DS</div>
-                    <h3>Donggi Song</h3>
-                    <p><strong>COO</strong></p>
-                    <p>POSTECH Math & ME, Factory Intelligence Lab, SCI paper co-author</p>
+                <div class="team-row">
+                    <div class="team-card">
+                        <div class="team-avatar">HH</div>
+                        <h3>Heewon Hwang</h3>
+                        <p><strong>Advisor</strong></p>
+                        <p>POSTECH Ph.D. in Process Systems Engineering</p>
+                        <p>• 2022-2024 Director at Simacro (Chemical Plant Digital Twin)</p>
+                        <p>• 2020-2022 Director at AspenTech (Major US Software Company)</p>
+                        <p>• 2014-2020 Process Design Manager at Hyundai Heavy & Samsung C&T</p>
+                        <p>• 10+ Years Industry Experience</p>
+                    </div>
+                    <div class="team-card">
+                        <div class="team-avatar">DS</div>
+                        <h3>Donggi Song</h3>
+                        <p><strong>COO</strong></p>
+                        <p>POSTECH Mathematics & Mechanical Engineering Double Major</p>
+                        <p>• Factory Intelligence SCI Quality Paper Co-author</p>
+                        <p>• 2 Years POSTECH Factory Intelligence Lab Internship</p>
+                        <p>• Advanced Mathematical Modeling & Optimization</p>
+                        <p>• Cross-disciplinary Engineering Expertise</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -476,7 +732,7 @@
                 <p><strong>Sangyun Kim, CEO</strong></p>
                 <p>📞 010-8968-2089</p>
                 <p>✉️ toomstar@postech.ac.kr</p>
-                <p style="margin-top: 2rem; opacity: 0.8;">🏆 Already recognized: Silicon Valley WIN 3rd Prize | 💰 $350K funding secured</p>
+                <p style="margin-top: 2rem; opacity: 0.8;">🏆 Proven track record with multiple awards and government support</p>
             </div>
         </div>
     </section>
