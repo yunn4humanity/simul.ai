@@ -247,20 +247,25 @@
         }
 
         .achievements-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 3rem;
+            display: flex;
+            justify-content: space-between;
+            gap: 1.5rem;
             margin-top: 3rem;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .achievement-card {
             background: rgba(255,255,255,0.1);
-            padding: 3rem 2rem;
+            padding: 2rem 1rem;
             border-radius: 20px;
             text-align: center;
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255,255,255,0.2);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            flex: 1;
+            max-width: 280px;
         }
 
         .achievement-card:hover {
@@ -269,29 +274,29 @@
         }
 
         .achievement-icon {
-            font-size: 4rem;
-            margin-bottom: 1.5rem;
+            font-size: 3rem;
+            margin-bottom: 1rem;
             display: block;
         }
 
         .achievement-title {
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             font-weight: 700;
             margin-bottom: 1rem;
             color: #fbbf24;
         }
 
         .achievement-amount {
-            font-size: 2.5rem;
+            font-size: 2rem;
             font-weight: 800;
             color: #4ade80;
             margin-bottom: 1rem;
         }
 
         .achievement-description {
-            font-size: 1rem;
+            font-size: 0.9rem;
             opacity: 0.9;
-            line-height: 1.6;
+            line-height: 1.5;
         }
 
         .program-badge {
@@ -665,59 +670,6 @@
                 <div class="stat-card">
                     <div class="stat-number">20%</div>
                     <p>Annual Growth Rate (CAGR)</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Team Section -->
-    <section class="team-section">
-        <div class="container">
-            <h2 class="section-title">World-Class Team</h2>
-            <div class="team-container">
-                <div class="team-row">
-                    <div class="team-card">
-                        <div class="team-avatar">SK</div>
-                        <h3>Sangyun Kim</h3>
-                        <p><strong>CEO</strong></p>
-                        <p>POSTECH Computer Science & Engineering</p>
-                        <p>• ML Lab Physics-based Forecasting AI Research</p>
-                        <p>• Revenue Experience with Solo Game Development</p>
-                        <p>• Presidential Science Scholarship Recipient</p>
-                        <p>• Global Client Communication (Belgium, Chile, S. Africa)</p>
-                    </div>
-                    <div class="team-card">
-                        <div class="team-avatar">KK</div>
-                        <h3>Kihyeon Kwon</h3>
-                        <p><strong>CTO</strong></p>
-                        <p>POSTECH Process Systems Lab Integrated M.S & PhD</p>
-                        <p>• Published SCI-quality papers including NSC paper</p>
-                        <p>• 2+ Corporate Process Simulation Assignments</p>
-                        <p>• 10+ Prizes in Nationwide Tech-startup Competitions</p>
-                        <p>• Deep Expertise in Chemical Process Design</p>
-                    </div>
-                </div>
-                <div class="team-row">
-                    <div class="team-card">
-                        <div class="team-avatar">HH</div>
-                        <h3>Heewon Hwang</h3>
-                        <p><strong>Advisor</strong></p>
-                        <p>POSTECH Ph.D. in Process Systems Engineering</p>
-                        <p>• 2022-2024 Director at Simacro (Chemical Plant Digital Twin)</p>
-                        <p>• 2020-2022 Director at AspenTech (Major US Software Company)</p>
-                        <p>• 2014-2020 Process Design Manager at Hyundai Heavy & Samsung C&T</p>
-                        <p>• 10+ Years Industry Experience</p>
-                    </div>
-                    <div class="team-card">
-                        <div class="team-avatar">DS</div>
-                        <h3>Donggi Song</h3>
-                        <p><strong>COO</strong></p>
-                        <p>POSTECH Mathematics & Mechanical Engineering Double Major</p>
-                        <p>• Factory Intelligence SCI Quality Paper Co-author</p>
-                        <p>• 2 Years POSTECH Factory Intelligence Lab Internship</p>
-                        <p>• Advanced Mathematical Modeling & Optimization</p>
-                        <p>• Cross-disciplinary Engineering Expertise</p>
-                    </div>
                 </div>
             </div>
         </div>
